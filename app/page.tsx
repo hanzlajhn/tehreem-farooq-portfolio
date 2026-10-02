@@ -94,20 +94,22 @@ export default function HomePage() {
             </div>
           </div>
 
-          <aside className="hero-rise rounded-3xl border border-cream/20 bg-white/5 p-4 sm:p-5">
-            <Image
-              src="/tehreem-farooq.jpg"
-              alt="Portrait of Tehreem Farooq"
-              width={720}
-              height={1280}
-              priority
-              className="aspect-[4/5] w-full rounded-2xl object-cover object-[center_18%]"
-            />
+          <aside className="hero-rise rounded-3xl border border-cream/20 bg-white/5 px-6 py-8 text-center sm:px-8">
+            <div className="mx-auto size-52 rounded-full bg-navy p-1.5 shadow-[0_0_0_6px_rgba(31,58,95,0.85)] ring-2 ring-[#E4C48A] sm:size-60">
+              <Image
+                src="/tehreem-farooq.jpg"
+                alt="Portrait of Tehreem Farooq"
+                width={720}
+                height={1280}
+                priority
+                className="size-full rounded-full object-cover object-[center_34%]"
+              />
+            </div>
             <p className="mt-6 text-sm leading-6 text-cream/75">
               Based in {site.location}. Comfortable working with international
               clients.
             </p>
-            <ul className="mt-6 space-y-3 text-sm">
+            <ul className="mt-6 flex flex-col items-center space-y-3 text-sm">
               <li>
                 <a
                   href={`mailto:${site.email}`}
