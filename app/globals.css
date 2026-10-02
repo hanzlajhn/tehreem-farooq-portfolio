@@ -1,0 +1,157 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-source), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-heading: var(--font-display);
+  --color-navy: var(--navy);
+  --color-gold: var(--gold);
+  --color-cream: var(--cream);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --background: #f4f7fb;
+  --foreground: #1a2740;
+  --card: #ffffff;
+  --card-foreground: #1a2740;
+  --popover: #ffffff;
+  --popover-foreground: #1a2740;
+  --primary: #1f3a5f;
+  --primary-foreground: #ffffff;
+  --secondary: #e7eef6;
+  --secondary-foreground: #1f3a5f;
+  --muted: #eef2f7;
+  --muted-foreground: #3e5166;
+  --accent: #e7eef6;
+  --accent-foreground: #1f3a5f;
+  --destructive: #9f2d2d;
+  --border: #d5dfeb;
+  --input: #c5d2e2;
+  --ring: #1f3a5f;
+  --radius: 0.75rem;
+  --navy: #1f3a5f;
+  --gold: #6b5430;
+  --cream: #f7f4ee;
+  color-scheme: light;
+}
+
+.dark {
+  --background: #0e1622;
+  --foreground: #e7eef6;
+  --card: #162433;
+  --card-foreground: #e7eef6;
+  --popover: #162433;
+  --popover-foreground: #e7eef6;
+  --primary: #d6e4f5;
+  --primary-foreground: #122033;
+  --secondary: #1c2e42;
+  --secondary-foreground: #e7eef6;
+  --muted: #1c2e42;
+  --muted-foreground: #b7c5d6;
+  --accent: #1c2e42;
+  --accent-foreground: #e7eef6;
+  --destructive: #f0a8a8;
+  --border: rgb(255 255 255 / 12%);
+  --input: rgb(255 255 255 / 18%);
+  --ring: #9eb6d4;
+  --navy: #1f3a5f;
+  --gold: #e0c48a;
+  --cream: #f7f4ee;
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans scroll-smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  ::selection {
+    background: #1f3a5f;
+    color: #f7f4ee;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+.hero-band {
+  background:
+    radial-gradient(900px 420px at 100% 0%, rgb(228 196 138 / 22%), transparent 55%),
+    #1f3a5f;
+}
+
+.hero-rise {
+  animation: rise 0.7s ease both;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
+}
+
+.reveal-in {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-rise,
+  .reveal {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
