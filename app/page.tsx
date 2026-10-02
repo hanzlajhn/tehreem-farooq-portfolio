@@ -1,4 +1,5 @@
 import { Download, Mail, MapPin, Phone } from "lucide-react";
+import Image from "next/image";
 import { ContactForm } from "@/components/contact-form";
 import { LinkedInIcon } from "@/components/linkedin-icon";
 import { Reveal } from "@/components/reveal";
@@ -43,6 +44,7 @@ export default function HomePage() {
       "@type": "Organization",
       name: "Highapp Solutions",
     },
+    image: `${site.url}/tehreem-farooq.jpg`,
     description: site.summary,
   };
 
@@ -92,13 +94,15 @@ export default function HomePage() {
             </div>
           </div>
 
-          <aside className="hero-rise rounded-3xl border border-cream/20 bg-white/5 p-6 sm:p-8">
-            <div
-              aria-hidden="true"
-              className="grid size-24 place-items-center border border-cream/30 font-display text-4xl font-semibold tracking-tight text-cream sm:size-28 sm:text-5xl"
-            >
-              {site.initials}
-            </div>
+          <aside className="hero-rise rounded-3xl border border-cream/20 bg-white/5 p-4 sm:p-5">
+            <Image
+              src="/tehreem-farooq.jpg"
+              alt="Portrait of Tehreem Farooq"
+              width={720}
+              height={1280}
+              priority
+              className="aspect-[4/5] w-full rounded-2xl object-cover object-[center_18%]"
+            />
             <p className="mt-6 text-sm leading-6 text-cream/75">
               Based in {site.location}. Comfortable working with international
               clients.
